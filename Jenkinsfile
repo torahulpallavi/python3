@@ -22,8 +22,8 @@ pipeline {
                                 if(!params.StopStub)
                                     {
                                                echo "test started node 1"
-                                               sh "chmod 777 startup.sh"
-                                               sh "./startup.sh $params.portNum1"
+                                               //sh "chmod 777 startup.sh"
+                                               //sh "./startup.sh $params.portNum1"
                                     }
                                 }
                             }
@@ -31,55 +31,6 @@ pipeline {
         }
 
 
-         stage(' Install Stubs -2 ') {
-               steps {
-                    script{
-                        if(!params.StopStub)
-                            {
-                                       echo "test started node 2"
-                                       sh "chmod 777 startup.sh"
-                                       sh "./startup.sh $params.portNum2"
-                            }
-                        }
-                    }
-                }
-
-
-          stage(' Install Stubs -3 ') {
-                               steps {
-                                    script{
-                                        if(!params.StopStub)
-                                            {
-                                                       echo "test started node 2"
-                                                       sh "chmod 777 startup.sh"
-                                                       sh "./startup.sh $params.portNum3"
-                                            }
-                                        }
-                                    }
-                                }
-
-
-
-
-        stage(' Configure Nginx') {
-                  steps {
-                          echo "configure NGINX"
-
-                        }
-                  }
-
-
-
-
-         stage('  Stop Stub ') {
-              steps {
-                      script{
-                              if(params.StopStub)
-                              {
-                                sh "chmod 777 stop.sh"
-                                sh "./stop.sh"
-                              }
-                    }      }
-               }
+         
     }
 }
