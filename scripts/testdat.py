@@ -4,7 +4,7 @@ conn = psycopg2.connect("host=localhost dbname=postgres user=postgres password=p
 print "connection successfull"
 cur = conn.cursor()
 
-with open('name.csv', 'r') as f:
+with open('scripts/name.csv', 'r') as f:
     cur.copy_from(f, 'name', sep=',') # name of the table and seprator
     conn.commit()
 
