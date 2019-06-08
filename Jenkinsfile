@@ -26,7 +26,7 @@ pipeline {
                                                echo "test started node 1"
                                                sh '''
                                                       
-                                                   python scripts/testdat.py
+                                                   python scripts/testdat.py ostgres postgres 127.0.0.1 postgres 5432
 
                                                   '''
                                                //sh "chmod 777 startup.sh"
