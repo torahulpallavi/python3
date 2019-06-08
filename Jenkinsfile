@@ -10,6 +10,8 @@ pipeline {
             string(defaultValue: 'postgres', description: 'databaseName', name: 'portNum1')
             string(defaultValue: 'postgres', description: 'userName', name: 'portNum2')
             string(defaultValue: 'postgres', description: 'password', name: 'portNum3')
+            string(defaultValue: '5432', description: 'portnumber', name: 'portNum4')
+            string(defaultValue: '127.0.0.1', description: 'host', name: 'portNum5')
 
         }
 
@@ -26,7 +28,7 @@ pipeline {
                                                echo "test started node 1"
                                                sh '''
                                                       
-                                                   python scripts/testdat.py postgres postgres 127.0.0.1 postgres 5432
+                                                   python scripts/testdat.py $params.portNum1 $params.portNum2 $params.portNum5 $params.portNum3 $params.portNum4
 
                                                   '''
                                                //sh "chmod 777 startup.sh"
