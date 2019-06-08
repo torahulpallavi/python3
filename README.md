@@ -14,6 +14,10 @@ steps :
   6. sudo yum install postgresql postgresql-devel python-devel
   7. pip install psycopg2
 
+ubuntu :
+sudo apt-get install python-pip
+
+
 Postgress :
 
   1. sudo su - postgres
