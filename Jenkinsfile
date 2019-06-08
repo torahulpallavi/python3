@@ -26,11 +26,11 @@ pipeline {
                                 if(!params.StopStub)
                                     {
                                                echo "test started node 1"
-                                               sh '''
+                                             
                                                       
-                                                   python scripts/testdat.py $params.portNum1 $params.portNum2 $params.portNum5 $params.portNum3 $params.portNum4
+                                                  sh "python scripts/testdat.py $params.portNum1 $params.portNum2 $params.portNum5 $params.portNum3 $params.portNum4"
 
-                                                  '''
+                                             
                                                //sh "chmod 777 startup.sh"
                                                //sh "./startup.sh $params.portNum1"
                                     }
