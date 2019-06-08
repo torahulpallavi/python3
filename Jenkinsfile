@@ -5,9 +5,9 @@ pipeline {
 
      parameters {
             booleanParam(defaultValue: false, description: 'Stop the stubs', name: 'StopStub')
-            string(defaultValue: '9096', description: 'port number to run the stub server', name: 'portNum1')
-            string(defaultValue: '9098', description: 'port number to run the stub server', name: 'portNum2')
-            string(defaultValue: '9100', description: 'port number to run the stub server', name: 'portNum3')
+            string(defaultValue: 'postgres', description: 'databaseName', name: 'portNum1')
+            string(defaultValue: 'postgres', description: 'userName', name: 'portNum2')
+            string(defaultValue: 'postgres', description: 'password', name: 'portNum3')
 
         }
 
@@ -22,6 +22,11 @@ pipeline {
                                 if(!params.StopStub)
                                     {
                                                echo "test started node 1"
+                                               sh '''
+                                                      
+                                                   python scripts/testdat.py
+
+                                                  '''
                                                //sh "chmod 777 startup.sh"
                                                //sh "./startup.sh $params.portNum1"
                                     }
