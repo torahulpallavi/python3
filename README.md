@@ -19,6 +19,17 @@ Postgress :
   1. sudo su - postgres
   2. psql
 
+
+Ubuntu 
+https://www.luminanetworks.com/docs-lsc-610/Topics/SDN_Controller_Software_Installation_Guide/Appendix/Installing_Psycopg_for_Ubuntu_1.html
+
+
+  sudo -u postgres psql postgres
+
+# \password postgres
+
+Enter new password: 
+
 list of databases 
 \l
 
@@ -36,6 +47,12 @@ CREATE TABLE name(
 
 size of database
 SELECT pg_size_pretty( pg_database_size('postgres'));
+
+
+create table name (
+ id int ,
+ name varchar(20)
+)
 
 
 

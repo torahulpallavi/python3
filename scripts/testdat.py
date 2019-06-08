@@ -1,6 +1,16 @@
+#!/usr/bin/python
+
 import psycopg2
 import csv
-conn = psycopg2.connect("host=localhost dbname=postgres user=postgres password=postgres")
+import sys 
+
+ print  sys.argv[1]
+ print sys.argv[2]
+ print sys.agr[3]
+
+ 
+
+conn = psycopg2.connect('host=localhost dbname=x user=sys.agrv[2] password=sys.agrv[3]')
 print "connection successfull"
 cur = conn.cursor()
 
